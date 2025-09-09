@@ -344,15 +344,32 @@ If you encounter issues:
 ## 📸 Screenshots
 
 ### Login Page
+<img width="1894" height="1080" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/0cf2cc20-b1ac-4dec-a4a8-fbf012c262e5" />
+
+### Limit Order Form
+<img width="1900" height="1080" alt="Screenshot (168)" src="https://github.com/user-attachments/assets/44b8c5b7-777b-433b-9c3e-0b2af5815b84" />
 
 ### Market Order Form
+<img width="1903" height="1080" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/69744023-248d-4a60-b052-741b49a2a8bb" />
 
 ### Advanced Orders Interface
+<img width="1900" height="1080" alt="Screenshot (169)" src="https://github.com/user-attachments/assets/50762e87-990d-4406-81a1-12bac188b2de" />
+
+<img width="1897" height="1080" alt="Screenshot (172)" src="https://github.com/user-attachments/assets/695e7a86-0bbf-4a37-ae05-7c756dfb7c82" />
 
 ### Order History
+<img width="1897" height="1080" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/40b13e40-9e33-4abe-af00-5001ab8cf798" />
+<img width="1903" height="1080" alt="Screenshot (171)" src="https://github.com/user-attachments/assets/abe07289-35c1-4587-b87e-182d382c2bd2" />
 
 ### Log File Example
+```bash
+2025-09-09 15:24:48,327 - INFO - Market order placed: {'symbol': 'BTCUSDT', 'side': <OrderSide.BUY: 'BUY'>, 'quantity': 0.001, 'order_type': <OrderType.MARKET: 'MARKET'>, 'status': 'PENDING', 'created_at': datetime.datetime(2025, 9, 9, 9, 54, 48, 220071), 'user_id': 'manoj', '_id': ObjectId('68bff96875337f802d70ae77'), 'id': '68bff96875337f802d70ae77'}
 
+2025-09-09 15:25:32,281 - INFO - Market order placed: {'symbol': 'BTCUSDT', 'side': <OrderSide.SELL: 'SELL'>, 'quantity': 0.001, 'order_type': <OrderType.MARKET: 'MARKET'>, 'status': 'PENDING', 'created_at': datetime.datetime(2025, 9, 9, 9, 55, 32, 178597), 'user_id': 'manoj', '_id': ObjectId('68bff99475337f802d70ae78'), 'id': '68bff99475337f802d70ae78'}
+
+2025-09-09 15:25:47,133 - INFO - Limit order placed: {'symbol': 'BTCUSDT', 'side': <OrderSide.BUY: 'BUY'>, 'quantity': 0.001, 'price': 0.01, 'order_type': <OrderType.LIMIT: 'LIMIT'>, 'status': 'PENDING', 'created_at': datetime.datetime(2025, 9, 9, 9, 55, 47, 103314), 'user_id': 'manoj', '_id': ObjectId('68bff9a375337f802d70ae79'), 'id': '68bff9a375337f802d70ae79'}
+
+```
 ---
 
 ## 🚀 Deployment
