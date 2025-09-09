@@ -23,9 +23,14 @@ app.include_router(auth.router)
 app.include_router(orders.router)
 app.include_router(advanced.router)
 
-@app.get("/")
+@app.get("/", include_in_schema=True)
+@app.head("/")
 async def root():
-    return {"message": "Binance Futures Order Bot API"}
+    return {"status": "ok", "message": "Binance Futures Order Bot API"}
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
 
 @app.on_event("shutdown")
 async def shutdown_event():
