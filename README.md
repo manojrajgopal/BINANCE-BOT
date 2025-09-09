@@ -4,6 +4,13 @@ A full-stack trading bot for Binance USDT-M Futures with a React frontend and Fa
 
 ---
 
+## 💻 Binance Bot Live Demo
+
+Check out the Binance Bot application here:  
+[🔵 **Binance Bot**](https://binancebot-hh8j.onrender.com/)
+
+---
+
 ## Features
 
 - Market Orders: Instant execution at current market price
