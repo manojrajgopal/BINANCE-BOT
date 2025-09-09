@@ -82,7 +82,7 @@ net start MongoDB
 ```
 
 Option B: MongoDB Atlas (Cloud)
-1. Create an account at (MongoDB Atlas)[https://www.mongodb.com/products/platform]
+1. Create an account at [MongoDB Atlas](https://www.mongodb.com/products/platform)
 2. Create a new cluster and database
 3. Get your connection string
 4. Update MONGODB_URI in backend/.env
