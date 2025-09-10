@@ -6,7 +6,6 @@ const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const token = localStorage.getItem('token');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('');
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -57,22 +56,12 @@ const Navigation = () => {
               <span>Connected</span>
             </div>
           </div>
-          
-          <button 
-            className={`nav-hamburger ${isMenuOpen ? 'open' : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
         
-        <div className={`nav-links ${isMenuOpen ? 'nav-open' : ''}`}>
+        <div className="nav-links">
           <Link 
             to="/market" 
             className={`nav-link ${activeTab === 'market' ? 'nav-active' : ''}`}
-            onClick={() => setIsMenuOpen(false)}
           >
             <span className="nav-icon">📊</span>
             <span className="nav-link-text">Market Order</span>
@@ -82,7 +71,6 @@ const Navigation = () => {
           <Link 
             to="/limit" 
             className={`nav-link ${activeTab === 'limit' ? 'nav-active' : ''}`}
-            onClick={() => setIsMenuOpen(false)}
           >
             <span className="nav-icon">🔒</span>
             <span className="nav-link-text">Limit Order</span>
@@ -92,7 +80,6 @@ const Navigation = () => {
           <Link 
             to="/advanced" 
             className={`nav-link ${activeTab === 'advanced' ? 'nav-active' : ''}`}
-            onClick={() => setIsMenuOpen(false)}
           >
             <span className="nav-icon">⚡</span>
             <span className="nav-link-text">Advanced Orders</span>
@@ -102,7 +89,6 @@ const Navigation = () => {
           <Link 
             to="/history" 
             className={`nav-link ${activeTab === 'history' ? 'nav-active' : ''}`}
-            onClick={() => setIsMenuOpen(false)}
           >
             <span className="nav-icon">📋</span>
             <span className="nav-link-text">Order History</span>

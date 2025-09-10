@@ -1,4 +1,4 @@
-/* Navigation.css */
+/* Navigation.css - No Hamburger Menu Version */
 
 /* Variables for consistent theming */
 :root {
@@ -44,6 +44,7 @@
   z-index: -1;
   overflow: hidden;
   border-radius: var(--border-radius);
+  pointer-events: none;
 }
 
 .nav-floating-circle {
@@ -52,6 +53,7 @@
   opacity: 0.08;
   filter: blur(40px);
   animation: nav-float 18s infinite ease-in-out;
+  pointer-events: none; /* Add this line */
 }
 
 .nav-circle-1 {
@@ -97,7 +99,7 @@
 .nav-card {
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px -40px rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
@@ -190,49 +192,13 @@
   }
 }
 
-/* Hamburger menu */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 21px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  position: relative;
-  z-index: 9999;   /* ✅ make sure it's always clickable */
-}
-
-.nav-hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  border-radius: 3px;
-  background: var(--text-primary);
-  transition: var(--transition);
-  transform-origin: center;
-}
-
-.nav-hamburger.open span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
-}
-
-.nav-hamburger.open span:nth-child(2) {
-  opacity: 0;
-  transform: translateX(-10px);
-}
-
-.nav-hamburger.open span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-
 /* Navigation links */
 .nav-links {
   display: flex;
   align-items: center;
   padding: 0 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-link {
@@ -247,6 +213,7 @@
   overflow: hidden;
   border-radius: 12px;
   margin: 0.25rem;
+  flex-shrink: 0;
 }
 
 .nav-link-text {
@@ -289,7 +256,7 @@
   position: absolute;
   bottom: 8px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%); 
   width: 30%;
   height: 3px;
   background: var(--accent-gradient);
@@ -339,6 +306,7 @@
   margin: 0.25rem;
   position: relative;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .nav-logout-btn .nav-link-highlight {
@@ -382,7 +350,6 @@
   }
   
   .nav-links {
-    flex-wrap: wrap;
     justify-content: center;
   }
   
@@ -402,45 +369,50 @@
   }
 
   .nav-card {
+    position: relative;
     border-radius: 0;
     border-left: none;
     border-right: none;
+    z-index: 10;
   }
 
-  .nav-hamburger {
-    display: flex;
-  }
-
-  /* ✅ Only one definition for nav-links */
   .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    padding: 0.5rem 0 1rem;
-  }
-
-  .nav-links.nav-open {
-    display: flex;
-    animation: nav-slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .nav-link, .nav-logout-btn {
-    width: calc(100% - 1rem);
+    width: auto;
     justify-content: center;
     padding: 1rem;
-    margin: 0.25rem 0.5rem;
+    margin: 0.25rem;
+    flex: 1;
+    min-width: 120px;
   }
 
   .nav-link.nav-active::after {
-    left: 10px;
-    transform: none;
-    width: 4px;
-    height: 60%;
-    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 3px;
+    top: auto;
+    bottom: 8px;
   }
 
   .nav-status {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    flex-direction: column;
+  }
+  
+  .nav-link, .nav-logout-btn {
+    width: calc(100% - 1rem);
+    margin: 0.25rem 0.5rem;
   }
 }
 
