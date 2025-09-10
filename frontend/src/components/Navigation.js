@@ -61,7 +61,6 @@ const Navigation = () => {
           <button 
             className={`nav-hamburger ${isMenuOpen ? 'open' : ''}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle navigation menu"
           >
             <span></span>
             <span></span>

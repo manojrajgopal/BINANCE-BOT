@@ -201,8 +201,8 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
   position: relative;
+  z-index: 9999;   /* ✅ make sure it's always clickable */
 }
 
 .nav-hamburger span {
@@ -400,36 +400,37 @@
     position: static;
     margin: 0 0 1.5rem;
   }
-  
+
   .nav-card {
     border-radius: 0;
     border-left: none;
     border-right: none;
   }
-  
+
   .nav-hamburger {
     display: flex;
   }
-  
+
+  /* ✅ Only one definition for nav-links */
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     padding: 0.5rem 0 1rem;
   }
-  
+
   .nav-links.nav-open {
     display: flex;
     animation: nav-slideDown 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .nav-link, .nav-logout-btn {
     width: calc(100% - 1rem);
     justify-content: center;
     padding: 1rem;
     margin: 0.25rem 0.5rem;
   }
-  
+
   .nav-link.nav-active::after {
     left: 10px;
     transform: none;
@@ -437,7 +438,7 @@
     height: 60%;
     top: 20%;
   }
-  
+
   .nav-status {
     display: none;
   }

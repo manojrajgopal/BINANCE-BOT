@@ -60,7 +60,7 @@ const Login = () => {
         formData.append('password', password);
         
         response = await axios.post(
-          `BACKEND_URL/auth/register`, 
+          `${BACKEND_URL}/auth/register`, 
           formData,
           {
             headers: {
